@@ -5466,7 +5466,12 @@ void ed::NodeBuilder::Group(const ImVec2& size)
     else
         ImGui::Dummy(size);
 
-    m_GroupBounds = ImGui_GetItemRect();
+    const auto nextBounds = ImGui_GetItemRect();
+    if (nextBounds.GetSize().y <= 0)
+    {
+        return;
+    }
+    m_GroupBounds = nextBounds;
     m_GroupBounds.Floor();
 }
 
