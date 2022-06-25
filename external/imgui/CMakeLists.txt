@@ -7,6 +7,7 @@ set(_imgui_Sources
     imgui.natvis
     imgui_demo.cpp
     imgui_draw.cpp
+    imgui_tables.cpp
     imgui_internal.h
     imgui_widgets.cpp
     imstb_rectpack.h

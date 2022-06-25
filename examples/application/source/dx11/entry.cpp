@@ -130,11 +130,10 @@ static ImFont* ImGui_LoadFont(ImFontAtlas& atlas, const char* name, float size, 
     config.OversampleH = 4;
     config.OversampleV = 4;
     config.PixelSnapH = false;
+	config.GlyphOffset = displayOffset;
 
     auto path = std::string(windir) + "\\Fonts\\" + name;
     auto font = atlas.AddFontFromFileTTF(path.c_str(), size, &config, ranges);
-    if (font)
-        font->DisplayOffset = displayOffset;
 
 	free(windir);
 
